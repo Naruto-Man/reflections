@@ -1,0 +1,6 @@
+When would you want to use a remote repository rather than keeping all your work local?
+    when i want to publish it to help other people with it or to share it with other developers to help each other in the
+    developing process by making a new remote that works as the staging area as an intermediate between the local repository
+    and the on i have created on githup using the `git remote add $remote_name$ $githup URL$` command and use `git remote`
+    to see all remotes i have made and at last to push/bull them using the `git push $remote_name$ $bransh_name$` command
+    to bush the new commits made to the bransh.
