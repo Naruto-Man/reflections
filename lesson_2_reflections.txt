@@ -6,6 +6,38 @@ What happens when you initialize a repository? Why do you need to do it?
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 
 	It's an intermediate area between the working directory and the commit, so that you can add/remove files to/from
-	it before making the commit change.
+	it using `git add` before making the commit change.
 	It allows me to control the commit as to add one or more files to the same commit, hence control the logical
 	flow of my project.
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+	As i can first check the changes i have made(between the working directory & staging area. in case i take a break and forgot the changes i have made) using the `git diff` command before add to the staging area if it is the changes i wants then i will make the `git add` command or if not i will make the `git reset --hard` to discard the changes then if i add them. i can also check if those are the changes/files i want to commit or not(between the staging area & the last commit) using the `git diff --staged` command to see the changes i have made to my files then i can commit them.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+	When i want to experiment a new feature and i don't want to change my main project or add a language support to my project then the branch will help me
+	as it will make a new production line without affecting the main(Master) branch using the `git branch` command to check my current project branches and
+	`git branch $branch_name$` to create a new branch also to go to a specific branch use `branch checkout $branch_name$`.
+
+How do the diagrams help you visualize the branch structure?
+
+	i can use the `git log --graph --oneline $branch_1$ $branch_2$ ...` to check and see the last state of each branch you choose.
+	also you can graph it on paper to see the commits of each branch and know what is going on without making a mistake by adding
+	a commit that is not reachable.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+	Merging two branches using `git merge $branch_1$ $branch_2$` while a branch of them being checked-out will merge the two branches' commit
+	and order them by commit date and the ranch label will be the current checked-out branch and then can delete any of those ones by `git branch -d $branch_name$` and if there are any unreachable commits that 
+	dis-attaches after a branch deletion then can be removed by the garbage collector `git gc`.
+	but at this rate i can't compare a commit to it's parent as the commits of the two branches get ordered by the commit date so we can use the `git show $commit_id$` to compare it with it's parent without knowing it.
+	Doing merging by the graph is more easily to track the project before and after the merge to check if things will go well.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	automatic merge: happen when there is no conflict on the same piece of code between the two branches. It is easier to let git handle the merge if there is no conflict in order not to waste time on that, but the down side is that conflicts would happen a lot if a lot of people are working on the same file/project.
+
+	manual merge: if there is any conflict on code between the merged branches then git modify the file that has th conflict to reflect it back to us then
+	we have to solve it manually by deleting the unwanted modification and keep the wanted one or make a combination of both of them. The down side is that
+	could be a lot of conflicts on the same file/project to handle manually and that would be annoying.
