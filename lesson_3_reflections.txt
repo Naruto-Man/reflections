@@ -17,3 +17,23 @@ Describe the differences between forks, clones, and branches. When would you use
 	Cloning: is making a copy from a github repository to your local repository to make a modification on it off-line
 	Branching: is making a new product line to make a modification to the code without breaking it and to make a new feature
 	Forking: is making a copy of a github repository to your github repository without having to clone it to your local machine
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+	In order to make changes locally and on the github repository easily without having a merging conflicts
+	Or to make the origin/master branch up to date so if any changes done on both the local and the github repository
+	it can be solved using the `git pull origin master` that is the same as `git fetch origin` + `git merge master origin/master`
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+	I would use the standard way like sharing a file and we all modify it one at a time and make comments on every piece of code i change
+	but that would make it too hard to collaborate and would waste the time as only one would change the same file.
+	But using git and github it would be easer to collaborate but would waste time only when there is a conflict between your commits and
+	another one that some else made on the same file
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+	when i want to try a new feature or when i want to make a collaborate with other developers on the same project and want to notify
+	them about my changes to the code in order not to make conflict.
+	The benefit of making a new branch is not to break the code/project while making a change/feature that is not done yet.
+	The benefit of making the changes to the master is that there will be no merging conflicts later when merging the two branches.
